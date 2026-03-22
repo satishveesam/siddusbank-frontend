@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// api points to your backend
-const API_BASE_URL = 'http://localhost:3636/api';
+// PRODUCTION BACKEND URL - CHANGE THIS TO YOUR LIVE URL
+const API_BASE_URL = 'https://siddusbank-backend-production.up.railway.app/api';
 
 console.log('Connecting to backend at:', API_BASE_URL);
 
