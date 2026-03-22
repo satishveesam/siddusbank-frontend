@@ -1,0 +1,806 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2ecc71 0%, #f39c12 100%);
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat;
+  background-size: cover;
+  opacity: 0.3;
+  pointer-events: none;
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Floating Shapes */
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 15s infinite ease-in-out;
+}
+
+.shape-1 {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 5%;
+  animation-duration: 20s;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  right: 8%;
+  animation-duration: 25s;
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  left: 15%;
+  animation-duration: 18s;
+}
+
+.shape-4 {
+  width: 120px;
+  height: 120px;
+  bottom: 20%;
+  left: 70%;
+  animation-duration: 22s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}
+
+
+.bank-logo-box {
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+  padding: 6px 14px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  animation: slideInLeft 0.6s ease-out;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.bank-logo-box:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon-container {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #2ecc71 0%, #f39c12 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.logo-icon {
+  font-size: 16px;
+  color: white;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2ecc71 0%, #f39c12 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.3px;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.login-card {
+  background: white;
+  border-radius: 20px;
+  padding: 35px 35px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+
+.register-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card::before,
+.register-card::before {
+  display: none;
+}
+
+
+.login-card h2,
+.register-card h2 {
+  text-align: center;
+  color: #333;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+.login-card h2 {
+  margin-bottom: 28px;
+  font-size: 24px;
+}
+
+.register-card h2 {
+  margin-bottom: 24px;
+  font-size: 22px;
+}
+
+.login-card h2::after,
+.register-card h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #2ecc71 0%, #f39c12 100%);
+  border-radius: 3px;
+}
+
+.login-card h2::after {
+  width: 50px;
+  height: 3px;
+}
+
+.register-card h2::after {
+  width: 45px;
+  height: 3px;
+  bottom: -8px;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.register-card .form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.register-card .form-group label {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.register-card .input-group {
+  gap: 8px;
+}
+
+.input-icon {
+  color: #2ecc71;
+  font-size: 18px;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.register-card .input-icon {
+  font-size: 16px;
+  width: 24px;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+  font-weight: 500;
+}
+
+.register-card input {
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.form-group input:hover {
+  border-color: #2ecc71;
+  background: white;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.1);
+  background: white;
+}
+
+.form-group input:focus + .input-icon {
+  color: #f39c12;
+  transform: scale(1.1);
+}
+
+
+.login-btn {
+  width: auto;
+  min-width: 160px;
+  padding: 14px 38px;
+  background: linear-gradient(135deg, #2ecc71 0%, #f39c12 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.register-btn {
+  width: auto;
+  min-width: 160px;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #2ecc71 0%, #f39c12 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-btn::before,
+.register-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.login-btn:hover::before,
+.register-btn:hover::before {
+  left: 100%;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+.login-btn:active,
+.register-btn:active {
+  transform: translateY(0);
+}
+
+.login-btn:disabled,
+.register-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+.loading-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.register-link {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.register-link p,
+.login-link p {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.register-link a,
+.login-link a {
+  color: #2ecc71;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+  position: relative;
+  font-size: 14px;
+}
+
+.register-link a::after,
+.login-link a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2ecc71 0%, #f39c12 100%);
+  transition: width 0.3s;
+}
+
+.register-link a:hover::after,
+.login-link a:hover::after {
+  width: 100%;
+}
+
+.register-link a:hover,
+.login-link a:hover {
+  color: #f39c12;
+  transform: translateX(2px);
+}
+
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.login-link p {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.login-link a {
+  font-size: 13px;
+}
+
+
+.security-message {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.08) 0%, rgba(243, 156, 18, 0.08) 100%);
+  border-radius: 10px;
+  font-size: 11px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.register-card .security-message {
+  margin-top: 18px;
+  padding: 8px;
+  font-size: 10px;
+}
+
+.security-message i {
+  font-size: 13px;
+  color: #2ecc71;
+}
+
+.register-card .security-message i {
+  font-size: 12px;
+}
+
+/* Error State */
+.form-group.error input {
+  border-color: #e74c3c;
+  background: #fff5f5;
+}
+
+.form-group.error .input-icon {
+  color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 11px;
+  margin-top: 6px;
+  display: block;
+  margin-left: 38px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.register-card .error-message {
+  margin-left: 32px;
+  font-size: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bank-logo-box {
+    top: 20px;
+    left: 20px;
+    padding: 5px 12px;
+  }
+  
+  .logo-icon-container {
+    width: 26px;
+    height: 26px;
+  }
+  
+  .logo-icon {
+    font-size: 14px;
+  }
+  
+  .logo-text {
+    font-size: 16px;
+  }
+  
+  .login-card,
+  .register-card {
+    margin-top: 70px;
+  }
+  
+  .login-card {
+    padding: 30px 25px;
+    max-width: 360px;
+  }
+  
+  .register-card {
+    padding: 25px 25px;
+    max-width: 380px;
+  }
+  
+  .login-card h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+  
+  .register-card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .input-icon {
+    font-size: 16px;
+    width: 26px;
+  }
+  
+  .register-card .input-icon {
+    font-size: 14px;
+    width: 22px;
+  }
+  
+  .form-group input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .register-card input {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+  
+  .login-btn {
+    min-width: 150px;
+    padding: 12px 34px;
+    font-size: 14px;
+  }
+  
+  .register-btn {
+    min-width: 150px;
+    padding: 10px 28px;
+    font-size: 13px;
+  }
+  
+  .error-message {
+    margin-left: 36px;
+  }
+  
+  .register-card .error-message {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bank-logo-box {
+    top: 15px;
+    left: 15px;
+    padding: 4px 10px;
+  }
+  
+  .logo-icon-container {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .logo-icon {
+    font-size: 12px;
+  }
+  
+  .logo-text {
+    font-size: 14px;
+  }
+  
+  .login-card,
+  .register-card {
+    margin-top: 65px;
+  }
+  
+  .login-card {
+    padding: 25px 20px;
+    max-width: 320px;
+  }
+  
+  .register-card {
+    padding: 20px 20px;
+    max-width: 320px;
+  }
+  
+  .login-card h2 {
+    font-size: 20px;
+    margin-bottom: 22px;
+  }
+  
+  .register-card h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  
+  .login-card h2::after {
+    width: 45px;
+    height: 2px;
+  }
+  
+  .register-card h2::after {
+    width: 40px;
+    height: 2px;
+    bottom: -6px;
+  }
+  
+  .form-group {
+    margin-bottom: 18px;
+  }
+  
+  .register-card .form-group {
+    margin-bottom: 12px;
+  }
+  
+  .form-group label {
+    font-size: 12px;
+  }
+  
+  .register-card .form-group label {
+    font-size: 11px;
+  }
+  
+  .input-icon {
+    font-size: 14px;
+    width: 24px;
+  }
+  
+  .register-card .input-icon {
+    font-size: 13px;
+    width: 20px;
+  }
+  
+  .form-group input {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+  
+  .register-card input {
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+  
+  .login-btn {
+    min-width: 140px;
+    padding: 10px 30px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+  
+  .register-btn {
+    min-width: 140px;
+    padding: 9px 26px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+  
+  .register-link,
+  .login-link {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+  
+  .register-link p,
+  .login-link p {
+    font-size: 11px;
+  }
+  
+  .register-link a,
+  .login-link a {
+    font-size: 12px;
+  }
+  
+  .security-message {
+    font-size: 10px;
+    padding: 8px;
+  }
+  
+  .register-card .security-message {
+    margin-top: 15px;
+    padding: 6px;
+    font-size: 9px;
+  }
+  
+  .security-message i {
+    font-size: 11px;
+  }
+  
+  .register-card .security-message i {
+    font-size: 10px;
+  }
+  
+  .error-message {
+    margin-left: 34px;
+    font-size: 10px;
+  }
+  
+  .register-card .error-message {
+    margin-left: 30px;
+    font-size: 9px;
+  }
+}
